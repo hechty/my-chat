@@ -1,0 +1,20 @@
+{
+  "name": "my-chat",
+  "version": "1.0.0",
+  "main": "app/main/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"yarn run start:render\" \"wait-on http://localhost:3000 && yarn run start:main\"",
+    "start:main": "electron .",
+    "start:render": "cd app/renderer/src/main && yarn start"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.1.6",
+    "wait-on": "^5.2.0"
+  }
+}
